@@ -1,4 +1,4 @@
-'use client';
+import type { Metadata } from 'next';
 
 import { BackgroundShapes } from './components/BackgroundShapes';
 import { Hero } from './components/Hero';
@@ -74,3 +74,26 @@ export default function Home() {
     </div>
   );
 }
+
+export const metadata: Metadata = {
+  title: 'Home',
+  description: 'Serika - Open ecosystem of AI, media, social, identity, and developer services.',
+  openGraph: {
+    title: 'The Serika Company',
+    description: 'Open ecosystem of interconnected services: AI, media, social, identity, and developer experiences.',
+    url: 'https://serika.dev',
+    siteName: 'Serika',
+    images: [
+      {
+        url: 'https://serika.dev/og-image.png',
+        alt: 'Serika — interconnected services',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'The Serika Company',
+    description: 'Open ecosystem of AI, media, social, identity, and developer services.',
+  },
+};

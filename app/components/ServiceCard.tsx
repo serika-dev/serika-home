@@ -18,9 +18,18 @@ export function ServiceCard({ title, url, description, brand, noLink }: ServiceC
               <span className="text-white">Toka</span>
             ) : (
               <>
-                <span className="text-white">Serika</span>
-                {brand.sub && (
-                  <span className="text-[#8b5cf6]">{brand.sub}</span>
+                {brand.sub === 'dev' ? (
+                  <>
+                    <span className="text-white">serika</span>
+                    <span className="text-[#8b5cf6]">.dev</span>
+                  </>
+                ) : (
+                  <>
+                    <span className="text-white">Serika</span>
+                    {brand.sub && (
+                      <span className="text-[#8b5cf6]">{brand.sub}</span>
+                    )}
+                  </>
                 )}
               </>
             )}

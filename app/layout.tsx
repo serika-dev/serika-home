@@ -59,6 +59,15 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://serika.dev",
   },
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+    { media: '(prefers-color-scheme: dark)', color: '#000000' },
+  ],
+  icons: {
+    icon: '/favicon.svg',
+    apple: '/favicon.svg',
+    shortcut: '/favicon.svg',
+  },
 };
 
 export default function RootLayout({
@@ -91,6 +100,13 @@ export default function RootLayout({
               logo: "https://serika.dev/logo.png",
               description:
                 "Serika builds an interconnected ecosystem of AI, media, social, identity, and developer tools.",
+              hasPart: [
+                { "@type": "WebSite", name: "Serika Dev", url: "https://serika.dev" },
+                { "@type": "WebSite", name: "Serika App", url: "https://serika.app" },
+                { "@type": "WebSite", name: "Serika Art", url: "https://serika.art" },
+                { "@type": "WebSite", name: "Toka", url: "https://toka.serika.dev" },
+                { "@type": "WebSite", name: "Accounts", url: "https://accounts.serika.dev" },
+              ],
             }),
           }}
         />

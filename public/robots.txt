@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Sitemap: https://serika.dev/sitemap.xml
+
+# Crawlers should index and follow the site.
+# If you add staging or private environments, update robots.txt accordingly.

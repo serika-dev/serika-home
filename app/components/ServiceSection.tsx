@@ -2,9 +2,11 @@ import { ServiceCard } from './ServiceCard';
 
 interface Service {
   title: string;
-  url: string;
+  url?: string;
   description: string;
   alias?: string;
+  brand?: { main: string; sub?: string };
+  noLink?: boolean;
 }
 
 interface ServiceSectionProps {
