@@ -9,7 +9,7 @@ const liveServices = [
     title: 'serika.dev',
     url: 'serika.dev',
     description: 'Our powerful AI platform for developers.',
-    brand: { main: 'Serika', sub: 'dev' },
+    brand: { main: 'Serika', sub: 'Dev' },
   },
   {
     title: 'serika.art',
@@ -18,10 +18,22 @@ const liveServices = [
     brand: { main: 'Serika', sub: 'Booru' },
   },
   {
-    title: 'serika.app',
-    url: 'serika.app',
+    title: 'serika.video',
+    url: 'serika.video',
     description: 'Video sharing and live streaming platform.',
     brand: { main: 'Serika', sub: 'Video' },
+  },
+  {
+    title: 'serika.app',
+    url: 'serika.app',
+    description: 'Privacy-focused search engine.',
+    brand: { main: 'Serika', sub: 'Search' },
+  },
+  {
+    title: 'serika.lol',
+    url: 'serika.lol',
+    description: 'Download videos from various platforms.',
+    brand: { main: 'Serika', sub: 'Downloader' },
   },
   {
     title: 'Toka',
@@ -43,12 +55,6 @@ const inDevelopment = [
     url: 'serika.xyz',
     description: 'Next-generation web browser.',
     brand: { main: 'Serika', sub: 'Browser' },
-  },
-  {
-    title: 'serika.search',
-    url: 'serika.search',
-    description: 'Privacy-focused search engine.',
-    brand: { main: 'Serika', sub: 'Search' },
   },
   {
     title: 'Serika IDE',
