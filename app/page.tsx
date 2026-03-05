@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { BackgroundShapes } from './components/BackgroundShapes';
 import { Hero } from './components/Hero';
 import { ServiceSection } from './components/ServiceSection';
+import { title } from 'process';
 
 const liveServices = [
   {
@@ -10,42 +11,49 @@ const liveServices = [
     url: 'serika.dev',
     description: 'Our powerful AI platform for developers.',
     brand: { main: 'Serika', sub: 'Dev' },
+    noStatus: false,
   },
   {
     title: 'serika.art',
     url: 'serika.art',
     description: 'Community image board platform.',
     brand: { main: 'Serika', sub: 'Booru' },
+    noStatus: false,
   },
   {
     title: 'serika.video',
     url: 'serika.video',
     description: 'Video sharing and live streaming platform.',
     brand: { main: 'Serika', sub: 'Video' },
+    noStatus: false,
   },
   {
     title: 'serika.app',
     url: 'serika.app',
     description: 'Privacy-focused search engine.',
     brand: { main: 'Serika', sub: 'Search' },
+    noStatus: false,
   },
   {
     title: 'serika.lol',
     url: 'serika.lol',
     description: 'Download videos from various platforms.',
     brand: { main: 'Serika', sub: 'Downloader' },
+    noStatus: false,
   },
   {
     title: 'Toka',
     url: 'toka.serika.dev',
     description: 'Social media platform for the Serika community.',
     brand: { main: 'Toka' },
+    noStatus: false,
   },
   {
     title: 'accounts.serika.dev',
     url: 'accounts.serika.dev',
     description: 'Account management and identity service.',
     brand: { main: 'Serika', sub: 'Accounts' },
+    noStatus: false,
   },
 ];
 
@@ -55,13 +63,25 @@ const inDevelopment = [
     url: 'serika.xyz',
     description: 'Next-generation web browser.',
     brand: { main: 'Serika', sub: 'Browser' },
+    status: 'development',
+    noStatus: true,
   },
   {
     title: 'Serika IDE',
     description: 'Code editor with integrated AI assistance.',
     brand: { main: 'Serika', sub: 'IDE' },
     noLink: true,
+    status: 'development',
+    noStatus: true,
   },
+  {
+    title: 'Serika Chat',
+    description: 'Private and Free Chat Messenger like Discord',
+    brand: { main: 'Serika', sub: 'Chat' },
+    noLink: true,
+    status: 'development',
+    noStatus: true,
+  }
 ];
 
 export default function Home() {
