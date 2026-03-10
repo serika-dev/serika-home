@@ -3,7 +3,6 @@ import type { Metadata } from 'next';
 import { BackgroundShapes } from './components/BackgroundShapes';
 import { Hero } from './components/Hero';
 import { ServiceSection } from './components/ServiceSection';
-import { title } from 'process';
 
 const liveServices = [
   {
@@ -63,7 +62,7 @@ const inDevelopment = [
     url: 'serika.xyz',
     description: 'Next-generation web browser.',
     brand: { main: 'Serika', sub: 'Browser' },
-    status: 'development',
+    status: 'development' as const,
     noStatus: true,
   },
   {
@@ -71,7 +70,7 @@ const inDevelopment = [
     description: 'Code editor with integrated AI assistance.',
     brand: { main: 'Serika', sub: 'IDE' },
     noLink: true,
-    status: 'development',
+    status: 'development' as const,
     noStatus: true,
   },
   {
@@ -79,7 +78,7 @@ const inDevelopment = [
     description: 'Private and Free Chat Messenger like Discord',
     brand: { main: 'Serika', sub: 'Chat' },
     noLink: true,
-    status: 'development',
+    status: 'development' as const,
     noStatus: true,
   }
 ];
