@@ -1,14 +1,33 @@
 
 
+'use client';
+
+import { useEffect, useState } from 'react';
+import { StatusIndicator, type Status } from './StatusIndicator';
+
 interface ServiceCardProps {
   title: string;
   url?: string;
   description: string;
   brand?: { main: string; sub?: string };
   noLink?: boolean;
+  status?: Status;
+  noStatus?: boolean;
 }
 
-export function ServiceCard({ title, url, description, brand, noLink }: ServiceCardProps) {
+export function ServiceCard({ title, url, description, brand, noLink, status: initialStatus, noStatus }: ServiceCardProps) {
+  const [status, setStatus] = useState<Status | undefined>(initialStatus);
+
+  useEffect(() => {
+    if (url && !noLink && !noStatus) {
+      fetch(`/api/status?url=${url}`)
+        .then((res) => res.json())
+        .then((data) => {
+          setStatus(data.status);
+        });
+    }
+  }, [url, noLink, noStatus]);
+
   const CardContent = (
     <div className="relative z-10">
       <h3 className="text-lg font-semibold mb-2 flex flex-wrap items-center gap-2">
@@ -46,6 +65,7 @@ export function ServiceCard({ title, url, description, brand, noLink }: ServiceC
           </code>
         )}
       </div>
+      {status && !noStatus && <StatusIndicator status={status} />}
     </div>
   );
 

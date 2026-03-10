@@ -1,4 +1,5 @@
 import { ServiceCard } from './ServiceCard';
+import { type Status } from './StatusIndicator';
 
 interface Service {
   title: string;
@@ -7,6 +8,8 @@ interface Service {
   alias?: string;
   brand?: { main: string; sub?: string };
   noLink?: boolean;
+  status?: Status;
+  noStatus?: boolean;
 }
 
 interface ServiceSectionProps {
