@@ -58,7 +58,7 @@ const liveServices = [
 
 const inDevelopment = [
   {
-    title: 'serika.xyz',
+    title: 'Serika Browser',
     url: 'serika.xyz',
     description: 'Next-generation web browser.',
     brand: { main: 'Serika', sub: 'Browser' },
@@ -80,6 +80,14 @@ const inDevelopment = [
     noLink: true,
     status: 'development' as const,
     noStatus: true,
+  },
+  {
+    title: 'Serika Notes',
+    description: 'An AI powered unified Notes system, with no paywall to use AI',
+    brand: { main: 'Serika', sub: 't9sy' },
+    noLink: false,
+    status: 'development' as const,
+    noStatus: false,
   }
 ];
 
