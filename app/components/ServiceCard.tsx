@@ -44,7 +44,7 @@ export function ServiceCard({ title, url, description, brand, noLink, status: in
                   </>
                 ) : (
                   <>
-                    <span className="text-white">Serika</span>
+                    <span className="text-white">{brand.main}</span>
                     {brand.sub && (
                       <span className="text-[#8b5cf6]">{brand.sub}</span>
                     )}
@@ -70,8 +70,8 @@ export function ServiceCard({ title, url, description, brand, noLink, status: in
   );
 
   return noLink ? (
-    <div className="group relative overflow-hidden rounded-lg border border-white/10 bg-white/5 p-6 backdrop-blur-sm cursor-default">
-      <div className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-pink-500/0 to-blue-500/0 transition-all" />
+    <div className="group relative overflow-hidden rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm cursor-default shadow-sm text-card-foreground">
+      <div className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-pink-500/0 to-blue-500/0 transition-all opacity-20" />
       {CardContent}
     </div>
   ) : (
@@ -79,7 +79,7 @@ export function ServiceCard({ title, url, description, brand, noLink, status: in
       href={url ? `https://${url}` : undefined}
       target="_blank"
       rel="noopener noreferrer"
-      className="group relative overflow-hidden rounded-lg border border-white/10 bg-white/5 p-6 transition-all hover:border-white/20 hover:bg-white/10 backdrop-blur-sm"
+      className="group relative overflow-hidden rounded-xl border border-white/10 bg-white/5 p-6 transition-all hover:bg-white/10 backdrop-blur-sm shadow-sm text-card-foreground"
     >
       <div className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-pink-500/0 to-blue-500/0 group-hover:from-purple-500/10 group-hover:via-pink-500/10 group-hover:to-blue-500/10 transition-all" />
       {CardContent}

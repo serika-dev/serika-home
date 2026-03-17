@@ -1,6 +1,7 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Navbar } from "./components/Navbar";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -59,15 +60,18 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://serika.dev",
   },
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
-    { media: '(prefers-color-scheme: dark)', color: '#000000' },
-  ],
   icons: {
     icon: '/favicon.svg',
     apple: '/favicon.svg',
     shortcut: '/favicon.svg',
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+    { media: '(prefers-color-scheme: dark)', color: '#000000' },
+  ],
 };
 
 export default function RootLayout({
@@ -110,7 +114,10 @@ export default function RootLayout({
             }),
           }}
         />
-        {children}
+        <Navbar />
+        <div className="pt-16">
+          {children}
+        </div>
       </body>
     </html>
   );
