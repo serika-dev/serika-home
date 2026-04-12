@@ -31,12 +31,12 @@ const liveServices = [
   {
     title: 'streaming.serika.dev',
     url: 'streaming.serika.dev',
-    description: 'Streaming platform for series, films, and creator channels. Closed Beta',
+    description: 'Streaming platform for series, films, and creator channels.',
     brand: { main: 'Serika', sub: 'Streaming' },
     noStatus: false,
   },
   {
-    title: 'Serika Chat',
+    title: 'SerikaCord',
     url: 'waifu.ws',
     description: 'Private and open communication platform for teams and communities.',
     brand: { main: 'Serika', sub: ' Chat' },
