@@ -36,7 +36,7 @@ const liveServices = [
     noStatus: false,
   },
   {
-    title: 'Serika Cord',
+    title: 'SerikaCord',
     url: 'waifu.ws',
     description: 'Private and open communication platform for teams and communities.',
     brand: { main: 'Serika', sub: ' Cord' },
@@ -70,6 +70,13 @@ const liveServices = [
     brand: { main: 'Serika', sub: 'Accounts' },
     noStatus: false,
   },
+  {
+    title: 'Serika Games',
+    url: 'gamnes.serika.app',
+    description: 'An open source and Privacy first Classic Browser Games Page.',
+    brand: { main: 'Serika', sub: 'Games' },
+    noStatus: false,
+  },
 ];
 
 const inDevelopment = [
@@ -85,6 +92,14 @@ const inDevelopment = [
     title: 'Serika IDE',
     description: 'Code editor with integrated AI assistance.',
     brand: { main: 'Serika', sub: 'IDE' },
+    noLink: true,
+    status: 'development' as const,
+    noStatus: true,
+  },
+  {
+    title: 'Serika OS',
+    description: 'A Linux based Operating System',
+    brand: { main: 'Serika', sub: 'OS' },
     noLink: true,
     status: 'development' as const,
     noStatus: true,
