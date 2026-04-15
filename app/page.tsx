@@ -39,7 +39,7 @@ const liveServices = [
     title: 'SerikaCord',
     url: 'waifu.ws',
     description: 'Private and open communication platform for teams and communities.',
-    brand: { main: 'Serika', sub: ' Chat' },
+    brand: { main: 'Serika', sub: ' Cord' },
     noStatus: true,
   },
   {
