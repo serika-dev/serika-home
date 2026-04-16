@@ -72,7 +72,7 @@ const liveServices = [
   },
   {
     title: 'Serika Games',
-    url: 'gamnes.serika.app',
+    url: 'games.serika.app',
     description: 'An open source and Privacy first Classic Browser Games Page.',
     brand: { main: 'Serika', sub: 'Games' },
     noStatus: false,
