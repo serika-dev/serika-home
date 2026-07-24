@@ -1,123 +1,160 @@
-import type { Metadata, Viewport } from "next";
-import Script from "next/script";
-import { Geist, Geist_Mono } from "next/font/google";
-import { Navbar } from "./components/Navbar";
-import "./globals.css";
+import type { Metadata, Viewport } from 'next';
+import Script from 'next/script';
+import { Inter, Space_Grotesk, JetBrains_Mono } from 'next/font/google';
+import { Navbar } from './components/Navbar';
+import './globals.css';
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const inter = Inter({
+  variable: '--font-inter',
+  subsets: ['latin'],
+  display: 'swap',
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const spaceGrotesk = Space_Grotesk({
+  variable: '--font-space-grotesk',
+  subsets: ['latin'],
+  display: 'swap',
 });
+
+const jetbrains = JetBrains_Mono({
+  variable: '--font-jetbrains',
+  subsets: ['latin'],
+  display: 'swap',
+});
+
+const SITE = 'https://serika.dev';
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://serika.dev"),
+  metadataBase: new URL(SITE),
   title: {
-    default: "The Serika Company",
-    template: "%s | The Serika Company",
+    default: 'Serika — Open source software, built out of curiosity',
+    template: '%s | Serika',
   },
   description:
-    "Serika builds an interconnected ecosystem of AI, media, social, identity, and developer tools for the modern internet.",
+    'Serika builds open source software for a freer internet: SerikaMoe anime streaming, Serika Booru, Serika.chat, Serika Search and more. Open by default, built to learn, shipped in public.',
+  applicationName: 'Serika',
   keywords: [
-    "Serika",
-    "Serika Company",
-    "Serika.dev",
-    "Serika Video",
-    "Serika Booru",
-    "AI platform",
-    "developer tools",
-    "social platform",
-    "identity",
-    "video streaming",
-    "search",
-    "browser",
-    "IDE",
+    'Serika',
+    'Serika Company',
+    'anime',
+    'watch anime',
+    'anime streaming',
+    'anime streaming platform',
+    'SerikaMoe',
+    'Serika Moe',
+    'Serika Booru',
+    'anime image board',
+    'booru',
+    'Serika.chat',
+    'Discord alternative',
+    'Serika Search',
+    'private search engine',
+    'Serika Games',
+    'open source anime',
+    'privacy-first software',
+    'anti-censorship',
+    'ASS subtitles',
+    'Dutch anime streaming',
+    'anime Europe',
   ],
+  authors: [{ name: 'The Serika Company', url: SITE }],
+  creator: 'The Serika Company',
+  publisher: 'The Serika Company',
+  category: 'technology',
   openGraph: {
-    title: "The Serika Company",
+    title: 'Serika — A new home for anime and the open internet',
     description:
-      "Open ecosystem of interconnected services: AI, media, social, identity, and developer experiences.",
-    url: "https://serika.dev",
-    siteName: "Serika",
-    locale: "en_US",
-    type: "website",
+      'Privacy-first, open source ecosystem: SerikaMoe anime streaming, Serika Booru, Serika.chat, Serika Search and more. No AI training on your data.',
+    url: SITE,
+    siteName: 'Serika',
+    locale: 'en_US',
+    type: 'website',
   },
   twitter: {
-    card: "summary_large_image",
-    title: "The Serika Company",
+    card: 'summary_large_image',
+    title: 'Serika — A new home for anime and the open internet',
     description:
-      "An open ecosystem of AI, media, social, identity, and developer services.",
-    creator: "@serika",
+      'Privacy-first, open source anime streaming, image board, chat & search.',
+    site: '@SerikaDev',
+    creator: '@SerikaDev',
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
-  alternates: {
-    canonical: "https://serika.dev",
-  },
-  icons: {
-    icon: '/favicon.svg',
-    apple: '/favicon.svg',
-    shortcut: '/favicon.svg',
-  },
+  alternates: { canonical: SITE },
 };
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
-    { media: '(prefers-color-scheme: dark)', color: '#000000' },
+  themeColor: '#0a0a0f',
+  colorScheme: 'dark',
+};
+
+const orgJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'The Serika Company',
+  alternateName: 'Serika',
+  url: SITE,
+  logo: `${SITE}/favicon.png`,
+  description:
+    'Serika builds open source software for a freer internet — anime streaming, image boards, chat, search and developer tools.',
+  sameAs: [
+    'https://x.com/SerikaDev',
+    'https://x.com/SerikaMoe',
+    'https://www.youtube.com/@SerikaDev',
+    'https://www.youtube.com/@SerikaMoe',
+    'https://discord.gg/F3Dxp2DsWj',
+    'https://github.com/serika-dev',
   ],
+  brand: [
+    { '@type': 'Brand', name: 'SerikaMoe' },
+    { '@type': 'Brand', name: 'Serika Booru' },
+    { '@type': 'Brand', name: 'Serika.chat' },
+    { '@type': 'Brand', name: 'Serika Search' },
+  ],
+};
+
+const siteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Serika',
+  url: SITE,
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: 'https://serika.art/?q={search_term_string}',
+    'query-input': 'required name=search_term_string',
+  },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrains.variable} antialiased`}
       >
         <Script
-          id="ld-json-org"
+          id="ld-org"
           type="application/ld+json"
           strategy="beforeInteractive"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              name: "Serika",
-              url: "https://serika.dev",
-              sameAs: [
-                "https://serika.dev",
-                "https://serika.app",
-                "https://serika.art",
-                "https://toka.serika.dev",
-                "https://accounts.serika.dev",
-              ],
-              logo: "https://serika.dev/logo.png",
-              description:
-                "Serika builds an interconnected ecosystem of AI, media, social, identity, and developer tools.",
-              hasPart: [
-                { "@type": "WebSite", name: "Serika Dev", url: "https://serika.dev" },
-                { "@type": "WebSite", name: "Serika App", url: "https://serika.app" },
-                { "@type": "WebSite", name: "Serika Art", url: "https://serika.art" },
-                { "@type": "WebSite", name: "Toka", url: "https://toka.serika.dev" },
-                { "@type": "WebSite", name: "Accounts", url: "https://accounts.serika.dev" },
-              ],
-            }),
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
+        />
+        <Script
+          id="ld-site"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }}
         />
         <Navbar />
-        <div className="pt-16">
-          {children}
-        </div>
+        <div className="pt-16">{children}</div>
       </body>
     </html>
   );

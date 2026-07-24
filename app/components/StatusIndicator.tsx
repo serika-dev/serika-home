@@ -1,33 +1,26 @@
-import React from 'react';
+export type Status = 'operational' | 'downtime' | 'checking';
 
-export type Status = 'operational' | 'downtime' | 'development';
-
-interface StatusIndicatorProps {
-  status: Status;
-}
-
-const statusConfig = {
-  operational: {
-    text: 'All systems operational',
-    color: 'bg-green-500',
-  },
-  downtime: {
-    text: 'Experiencing downtime',
-    color: 'bg-red-500',
-  },
-  development: {
-    text: 'In active development',
-    color: 'bg-yellow-500',
-  },
+const color: Record<Status, string> = {
+  operational: 'var(--ok)',
+  downtime: 'var(--down)',
+  checking: 'var(--faint)',
 };
 
-export function StatusIndicator({ status }: StatusIndicatorProps) {
-  const { text, color } = statusConfig[status];
+const label: Record<Status, string> = {
+  operational: 'Operational',
+  downtime: 'Experiencing downtime',
+  checking: 'Checking status',
+};
 
+/** A single, quiet status dot. */
+export function StatusDot({ status }: { status: Status }) {
   return (
-    <div className="flex items-center gap-2 mt-2">
-      <div className={`w-2 h-2 rounded-full ${color}`} />
-      <span className="text-xs text-gray-400">{text}</span>
-    </div>
+    <span
+      className="inline-block h-2 w-2 shrink-0 rounded-full"
+      style={{ backgroundColor: color[status] }}
+      title={label[status]}
+      aria-label={label[status]}
+      role="img"
+    />
   );
 }
