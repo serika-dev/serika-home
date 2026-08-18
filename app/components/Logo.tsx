@@ -3,7 +3,7 @@ interface LogoProps {
 }
 
 /**
- * The Serika Company wordmark — text only, "Company" in accent purple.
+ * The Serika Company wordmark, text only, "Company" in accent purple.
  * This is the single brand logo used across the header, footer and elsewhere.
  */
 export function Logo({ className = '' }: LogoProps) {

@@ -22,7 +22,7 @@ export async function generateMetadata({
 
   const url = `https://serika.dev/products/${product.slug}`;
   return {
-    title: `${product.name} — ${product.tagline}`,
+    title: `${product.name}, ${product.tagline}`,
     description: product.description[0],
     keywords: [product.name, ...product.keywords, 'Serika', 'anime', 'open source'],
     alternates: { canonical: url },
@@ -124,15 +124,15 @@ export default async function ProductPage({
         <div className="mt-8 rounded-xl border border-[var(--border)] bg-[var(--panel)] p-5">
           <p className="text-sm font-semibold text-[var(--text)]">
             {productAge(product) === 'all'
-              ? 'Age requirement — All ages'
-              : `Age requirement — ${productAge(product)}+`}
+              ? 'Age requirement: All ages'
+              : `Age requirement: ${productAge(product)}+`}
           </p>
           <p className="mt-2 text-sm leading-relaxed text-[var(--muted)]">
             {productAge(product) === 'all'
               ? 'This product is suitable for all ages.'
               : productAge(product) === 18
-                ? 'This product is strictly for users aged 18 or over. Attempting to bypass age or access restrictions — or helping others do so — will result in the suspension of all your accounts across every Serika service.'
-                : 'This product is for users aged 16 or over. Some sections may require you to be 18 or over. Attempting to bypass age or access restrictions — or helping others do so — will result in the suspension of all your accounts across every Serika service.'}
+                ? 'This product is strictly for users aged 18 or over. Attempting to bypass age or access restrictions, or helping others do so, will result in the suspension of all your accounts across every Serika service.'
+                : 'This product is for users aged 16 or over. Some sections may require you to be 18 or over. Attempting to bypass age or access restrictions, or helping others do so, will result in the suspension of all your accounts across every Serika service.'}
           </p>
         </div>
 

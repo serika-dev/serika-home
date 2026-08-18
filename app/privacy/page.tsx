@@ -112,7 +112,7 @@ const clauses: Clause[] = [
     id: 'self-hosted',
     heading: 'Open-source and self-hosted instances',
     body: [
-      'Where our open-source software is deployed or self-hosted by someone other than Serika, the operator of that instance — not Serika — is responsible for the data processed on it and acts as the data controller. This policy covers only the Services that Serika itself operates.',
+      'Where our open-source software is deployed or self-hosted by someone other than Serika, the operator of that instance, not Serika, is responsible for the data processed on it and acts as the data controller. This policy covers only the Services that Serika itself operates.',
     ],
   },
   {

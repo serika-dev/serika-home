@@ -1,0 +1,7 @@
+{
+  "version": "0.0.1",
+  "autoPort": true,
+  "configurations": [
+    { "name": "serika-dev", "runtimeExecutable": "npm", "runtimeArgs": ["run", "dev", "--", "--port", "3217"], "port": 3217 }
+  ]
+}

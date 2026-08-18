@@ -16,6 +16,7 @@ const columns: { heading: string; links: { label: string; href: string; external
     heading: 'Company',
     links: [
       { label: 'About us', href: '/about' },
+      { label: 'Donate', href: '/donate' },
       { label: 'Status', href: 'https://status.serika.dev', external: true },
       { label: 'Join us', href: 'https://accounts.serika.dev', external: true },
     ],
@@ -42,7 +43,7 @@ export function Footer() {
             <Logo />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-[var(--muted)]">
               Open source software, built out of curiosity. We create, learn and
-              share — hoping to make the internet a little more open, one project
+              share, hoping to make the internet a little more open, one project
               at a time.
             </p>
           </div>

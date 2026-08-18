@@ -9,6 +9,7 @@ import { Logo } from './Logo';
 const navItems = [
   { href: '/#products', label: 'Products' },
   { href: '/about', label: 'About' },
+  { href: '/donate', label: 'Donate' },
   { href: 'https://status.serika.dev', label: 'Status', external: true },
 ];
 

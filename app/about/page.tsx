@@ -4,14 +4,14 @@ import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { Footer } from '../components/Footer';
 
 export const metadata: Metadata = {
-  title: 'About Serika — Open source, curiosity, continuous learning',
+  title: 'About Serika, open source, curiosity, continuous learning',
   description:
     'Serika builds open source software because the internet is at its best when people are free to create, learn and share. Read about our mission, our love of passion projects, and how we build in public.',
   alternates: { canonical: 'https://serika.dev/about' },
   openGraph: {
     title: 'About Serika',
     description:
-      'Open source software built out of curiosity — create, learn, share, and make the internet a little more open, one project at a time.',
+      'Open source software built out of curiosity: create, learn, share, and make the internet a little more open, one project at a time.',
     url: 'https://serika.dev/about',
     type: 'website',
   },
@@ -22,13 +22,13 @@ const sections: { eyebrow: string; body: string[] }[] = [
     eyebrow: 'Why we build',
     body: [
       'Serika exists because we believe the internet is at its best when people are free to create, learn, and share. Our goal is not to build closed ecosystems or lock people into proprietary platforms, but to create open source software that anyone can use, learn from, contribute to, or build upon.',
-      'Most of our projects begin with a simple question: “What if we built this ourselves?” Sometimes that means creating an alternative to an existing platform. Other times it means experimenting with new technologies, exploring different ideas, or solving problems we personally run into. We don’t believe every piece of software has to reinvent an entire category to be valuable — better accessibility, greater transparency, stronger privacy, and open development are all meaningful improvements.',
+      'Most of our projects begin with a simple question: “What if we built this ourselves?” Sometimes that means creating an alternative to an existing platform. Other times it means experimenting with new technologies, exploring different ideas, or solving problems we personally run into. We don’t believe every piece of software has to reinvent an entire category to be valuable. Better accessibility, greater transparency, stronger privacy, and open development are all meaningful improvements.',
     ],
   },
   {
     eyebrow: 'Built to learn',
     body: [
-      'Every project is built with learning in mind. Serika is driven by curiosity and a desire to continuously improve as engineers. We enjoy exploring new programming languages, frameworks, operating systems, infrastructure, and technologies. Rather than treating learning as something separate from development, we see every project as an opportunity to gain experience while creating something useful — for ourselves and for others.',
+      'Every project is built with learning in mind. Serika is driven by curiosity and a desire to continuously improve as engineers. We enjoy exploring new programming languages, frameworks, operating systems, infrastructure, and technologies. Rather than treating learning as something separate from development, we see every project as an opportunity to gain experience while creating something useful, for ourselves and for others.',
       'Because of this, not every project follows the same journey. Some become actively maintained platforms used by a growing community. Others remain experiments or learning projects that helped us understand a new technology or concept. We believe there is value in sharing that work instead of hiding it away. Building software is an ongoing process, and showing both the successes and the experiments better represents what real development looks like.',
     ],
   },
@@ -56,10 +56,10 @@ const sections: { eyebrow: string; body: string[] }[] = [
 const links = [
   { label: 'SerikaCord', href: 'https://serika.cc/serika' },
   { label: 'GitHub', href: 'https://github.com/serika-dev' },
-  { label: 'X — SerikaDev', href: 'https://x.com/SerikaDev' },
-  { label: 'X — SerikaMoe', href: 'https://x.com/SerikaMoe' },
-  { label: 'YouTube — SerikaDev', href: 'https://www.youtube.com/@SerikaDev' },
-  { label: 'YouTube — SerikaMoe', href: 'https://www.youtube.com/@SerikaMoe' },
+  { label: 'X / SerikaDev', href: 'https://x.com/SerikaDev' },
+  { label: 'X / SerikaMoe', href: 'https://x.com/SerikaMoe' },
+  { label: 'YouTube / SerikaDev', href: 'https://www.youtube.com/@SerikaDev' },
+  { label: 'YouTube / SerikaMoe', href: 'https://www.youtube.com/@SerikaMoe' },
   { label: 'Discord', href: 'https://discord.gg/F3Dxp2DsWj' },
 ];
 
@@ -76,7 +76,7 @@ export default function AboutPage() {
             Software we believe in, kept open.
           </h1>
           <p className="mt-8 text-xl leading-relaxed text-[var(--muted)]">
-            We&rsquo;re a small team driven by curiosity — building open source
+            We&rsquo;re a small team driven by curiosity, building open source
             software, experimenting with new ideas, and sharing what we make along
             the way.
           </p>
@@ -103,7 +103,7 @@ export default function AboutPage() {
             <blockquote className="mt-16 border-l-2 border-[var(--accent)] pl-6">
               <p className="display text-2xl font-semibold leading-snug text-[var(--text)] sm:text-3xl">
                 Build software we believe in, keep it open, keep learning, and make
-                the internet a little more open — one project at a time.
+                the internet a little more open, one project at a time.
               </p>
             </blockquote>
           </div>

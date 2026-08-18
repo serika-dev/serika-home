@@ -27,7 +27,7 @@ const SITE = 'https://serika.dev';
 export const metadata: Metadata = {
   metadataBase: new URL(SITE),
   title: {
-    default: 'Serika — Open source software, built out of curiosity',
+    default: 'Serika, open source software, built out of curiosity',
     template: '%s | Serika',
   },
   description:
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
   publisher: 'The Serika Company',
   category: 'technology',
   openGraph: {
-    title: 'Serika — A new home for anime and the open internet',
+    title: 'Serika, a new home for anime and the open internet',
     description:
       'Privacy-first, open source ecosystem: SerikaMoe anime streaming, Serika Booru, Serika.chat, Serika Search and more. No AI training on your data.',
     url: SITE,
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Serika — A new home for anime and the open internet',
+    title: 'Serika, a new home for anime and the open internet',
     description:
       'Privacy-first, open source anime streaming, image board, chat & search.',
     site: '@SerikaDev',
@@ -104,7 +104,7 @@ const orgJsonLd = {
   url: SITE,
   logo: `${SITE}/favicon.png`,
   description:
-    'Serika builds open source software for a freer internet — anime streaming, image boards, chat, search and developer tools.',
+    'Serika builds open source software for a freer internet: anime streaming, image boards, chat, search and developer tools.',
   sameAs: [
     'https://x.com/SerikaDev',
     'https://x.com/SerikaMoe',

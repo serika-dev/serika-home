@@ -19,7 +19,7 @@ export interface Product {
   maker: Maker;
   /**
    * Minimum age: 'all' ages, 16+ or 18+.
-   * Defaults to 16 when omitted — read it via {@link productAge}.
+   * Defaults to 16 when omitted. Read it via {@link productAge}.
    */
   age?: 'all' | 16 | 18;
   /** Optional note about mature sections within an otherwise 16+ product. */
@@ -38,7 +38,7 @@ export const products: Product[] = [
     tagline: 'A simple, modern image board with 3.5 million images.',
     description: [
       'Serika Booru is a fast, modern image board built for browsing, tagging and discovering art at scale.',
-      'With over 3.5 million images indexed and a clean tag-driven search, it is designed to stay out of your way — just find what you are looking for and go.',
+      'With over 3.5 million images indexed and a clean tag-driven search, it is designed to stay out of your way. Just find what you are looking for and go.',
     ],
     statusCheck: true,
     badge: null,
@@ -55,7 +55,7 @@ export const products: Product[] = [
     description: [
       'SerikaMoe is a Dutch anime streaming platform that is just getting started, with the ambitious goal of building a new home for anime fans across Europe.',
       'We are a small team working to create a high quality streaming experience while gradually growing into a real alternative to the well known orange themed anime giant whose name sounds like a sushi roll.',
-      'Owned and maintained by the Serika Company & Schoolsquid Media Foundation, we are on a mission to combat censorship and create privacy-first software. Our platform is fully open source — you can see exactly how your data is used.',
+      'Owned and maintained by the Serika Company & Schoolsquid Media Foundation, we are on a mission to combat censorship and create privacy-first software. Our platform is fully open source: you can see exactly how your data is used.',
       'We work directly with subtitle studios (and may even start our own) to ensure translations are done right. All subtitles are delivered in full ASS format with proper styling, because subtitles should feel like part of the show, not some overlay bolted on top.',
       '95% of all revenue goes directly to anime creators and licensors. We take only 5% to keep the lights on. That is the way it should be.',
     ],
@@ -73,7 +73,7 @@ export const products: Product[] = [
     wordmark: { main: 'Serika', sub: '.chat' },
     name: 'Serika.chat',
     url: 'serika.chat',
-    tagline: 'A private, open source Discord alternative — in early release.',
+    tagline: 'A private, open source Discord alternative, in early release.',
     description: [
       'Serika.chat is a simple, private and open source Discord alternative, currently in early release with much more to come soon.',
       'Built around real ownership of your communities and your data, it is developed in the open so you can always see exactly how it works.',
@@ -126,7 +126,7 @@ export const products: Product[] = [
     url: 'toka.serika.dev',
     tagline: 'A social space for the Serika community.',
     description: [
-      'Toka is a social media platform for the Serika community — a place to share, follow and keep up with everyone building and using Serika products.',
+      'Toka is a social media platform for the Serika community, a place to share, follow and keep up with everyone building and using Serika products.',
       'It is under less active development at the moment.',
     ],
     statusCheck: true,
@@ -142,7 +142,7 @@ export const products: Product[] = [
     tagline: 'A next-generation web browser.',
     description: [
       'Serika Browser is an early experiment in building a next-generation web browser from the ground up.',
-      'It is very much in development — a project we are using to explore rendering, privacy and what a browser could be.',
+      'It is very much in development, a project we are using to explore rendering, privacy and what a browser could be.',
     ],
     statusCheck: false,
     badge: 'dev',
@@ -187,7 +187,7 @@ export const products: Product[] = [
     url: 'games.serika.app',
     tagline: 'Open source, privacy-first classic browser games.',
     description: [
-      'Serika Games is an open source and privacy-first home for classic browser games — no tracking, no nonsense, just play.',
+      'Serika Games is an open source and privacy-first home for classic browser games: no tracking, no nonsense, just play.',
       'It is one of the products made by Jynx within the Serika ecosystem.',
     ],
     statusCheck: true,

@@ -1,6 +1,6 @@
 import { ImageResponse } from 'next/og';
 
-export const alt = 'Serika — Open source software, built out of curiosity';
+export const alt = 'Serika, open source software, built out of curiosity';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -42,7 +42,7 @@ export default function OpengraphImage() {
             <span style={{ color: '#8b5cf6' }}>curiosity.</span>
           </div>
           <div style={{ color: '#8a8a99', fontSize: 30, marginTop: 30 }}>
-            Open source software for a freer internet — create, learn, share.
+            Open source software for a freer internet: create, learn, share.
           </div>
         </div>
 

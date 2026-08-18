@@ -40,7 +40,7 @@ const clauses: Clause[] = [
     id: 'eligibility',
     heading: 'Age requirements and accounts',
     body: [
-      'All Serika Services require you to be at least 16 years old. Some Services — or certain sections or features within them, such as Serika Booru — require you to be at least 18 years old. You must meet the minimum age that applies to the Service and content you access, and be legally capable of entering into a contract.',
+      'All Serika Services require you to be at least 16 years old. Some Services, or certain sections or features within them, such as Serika Booru, require you to be at least 18 years old. You must meet the minimum age that applies to the Service and content you access, and be legally capable of entering into a contract.',
       'You must not misrepresent your age, and you must not attempt to bypass, circumvent or defeat any age gate, content rating, or access restriction, nor help or enable anyone else to do so. If we believe you have bypassed or attempted to bypass such restrictions, we may suspend or terminate all of your accounts across every Serika Service, without notice and at our sole discretion.',
       'Certain Services require a Serika account. You are responsible for providing accurate information, for keeping your credentials confidential, and for all activity that occurs under your account. You must notify us promptly of any unauthorised use. We may refuse, suspend or reclaim any account or username at our discretion.',
     ],
@@ -104,7 +104,7 @@ const clauses: Clause[] = [
     id: 'liability',
     heading: 'Limitation of liability',
     body: [
-      'To the maximum extent permitted by applicable law, Serika and its owners, officers, employees, contributors and partners will not be liable for any indirect, incidental, special, consequential, exemplary or punitive damages, or for any loss of profits, revenue, data, goodwill or other intangible losses, arising out of or relating to your use of, or inability to use, the Services — whether based in contract, tort, negligence, strict liability or otherwise, and even if we have been advised of the possibility of such damages.',
+      'To the maximum extent permitted by applicable law, Serika and its owners, officers, employees, contributors and partners will not be liable for any indirect, incidental, special, consequential, exemplary or punitive damages, or for any loss of profits, revenue, data, goodwill or other intangible losses, arising out of or relating to your use of, or inability to use, the Services, whether based in contract, tort, negligence, strict liability or otherwise, and even if we have been advised of the possibility of such damages.',
       'To the maximum extent permitted by law, our total aggregate liability for all claims relating to the Services will not exceed the greater of (a) the total amount you paid us for the relevant Service in the three (3) months before the event giving rise to the liability, or (b) fifty euros (€50).',
       'Nothing in these Terms excludes or limits liability that cannot be excluded or limited under applicable law, such as liability for death or personal injury caused by negligence, or for fraud.',
     ],
@@ -121,7 +121,7 @@ const clauses: Clause[] = [
     heading: 'Suspension and termination',
     body: [
       'You may stop using the Services at any time. We may suspend or terminate your access to any or all of the Services at any time, with or without cause and with or without notice, including if we reasonably believe you have violated these Terms or created risk or legal exposure for us.',
-      'Upon termination, your right to use the affected Services ends immediately. Provisions that by their nature should survive — including ownership, content licences, disclaimers, limitations of liability, indemnities and dispute terms — will survive termination.',
+      'Upon termination, your right to use the affected Services ends immediately. Provisions that by their nature should survive, including ownership, content licences, disclaimers, limitations of liability, indemnities and dispute terms, will survive termination.',
     ],
   },
   {
@@ -162,7 +162,7 @@ export default function TermsPage() {
       eyebrow="Legal"
       title="Terms of Service"
       updated="24 July 2026"
-      lead="These Terms set out the rules for using Serika’s websites, products and services. Please read them carefully — they include important limitations on our liability and describe how each individual Service adds its own terms on top of these."
+      lead="These Terms set out the rules for using Serika’s websites, products and services. Please read them carefully: they include important limitations on our liability and describe how each individual Service adds its own terms on top of these."
       callout="Every Serika service has its own Terms of Service and Privacy Policy that apply specifically to it, in addition to these overarching Terms. Where a service-specific term conflicts with these Terms for that service, the service-specific term governs for that service."
       clauses={clauses}
     />

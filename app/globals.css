@@ -43,7 +43,7 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* A single, soft purple glow — no grids, no floating shapes. */
+/* A single, soft purple glow: no grids, no floating shapes. */
 .glow {
   position: fixed;
   inset: 0;

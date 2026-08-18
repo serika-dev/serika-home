@@ -136,7 +136,7 @@ export function HomeProducts() {
 
   return (
     <div id="products" className="scroll-mt-24 space-y-20">
-      {/* Flagship — full width, numbered lineup. */}
+      {/* Flagship: full width, numbered lineup. */}
       <section>
         <SectionHead
           n="01"

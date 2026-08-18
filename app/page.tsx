@@ -5,7 +5,7 @@ import { HomeProducts } from './components/HomeProducts';
 import { Footer } from './components/Footer';
 
 export const metadata: Metadata = {
-  title: 'Serika — Open source software, built out of curiosity',
+  title: 'Serika, open source software, built out of curiosity',
   description:
     'Serika builds open source software for a freer internet: SerikaMoe anime streaming, Serika Booru, Serika.chat, Serika Search and more. Open by default, built to learn, shipped in public.',
   alternates: { canonical: 'https://serika.dev' },
@@ -22,7 +22,7 @@ export default function Home() {
     <>
       <div className="glow" aria-hidden="true" />
       <main className="relative z-10 mx-auto max-w-5xl px-6 pb-28">
-        {/* Hero — the thesis: open source, curiosity, a freer internet. */}
+        {/* Hero: open source, curiosity, a freer internet. */}
         <section className="rise pt-24 pb-20 sm:pt-32 sm:pb-28">
           <h1 className="display max-w-4xl pt-4 text-[2.75rem] font-bold leading-[1.02] tracking-[-0.03em] text-[var(--text)] sm:text-6xl md:text-[5.25rem]">
             Open software,
@@ -33,7 +33,7 @@ export default function Home() {
           <p className="mt-8 max-w-2xl text-lg leading-relaxed text-[var(--muted)] sm:text-xl">
             The internet is at its best when people are free to create, learn and
             share. We build open source software anyone can use, learn from, or
-            build upon — from anime streaming and image boards to chat, search and
+            build upon, from anime streaming and image boards to chat, search and
             developer tools.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
