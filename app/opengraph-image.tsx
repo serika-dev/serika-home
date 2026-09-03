@@ -53,7 +53,7 @@ export default function OpengraphImage() {
           <span style={{ color: '#3a3a44' }}>·</span>
           <span>Serika.chat</span>
           <span style={{ color: '#3a3a44' }}>·</span>
-          <span>Serika Search</span>
+          <span>Serika Social</span>
         </div>
       </div>
     ),

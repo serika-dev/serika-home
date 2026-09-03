@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     template: '%s | Serika',
   },
   description:
-    'Serika builds open source software for a freer internet: SerikaMoe anime streaming, Serika Booru, Serika.chat, Serika Search and more. Open by default, built to learn, shipped in public.',
+    'Serika builds open source software for a freer internet: SerikaMoe anime streaming, Serika Booru, Serika.chat and Serika Social. Open by default, built to learn, shipped in public.',
   applicationName: 'Serika',
   keywords: [
     'Serika',
@@ -47,9 +47,9 @@ export const metadata: Metadata = {
     'booru',
     'Serika.chat',
     'Discord alternative',
-    'Serika Search',
-    'private search engine',
-    'Serika Games',
+    'Serika Social',
+    'social VR',
+    'VR chat',
     'open source anime',
     'privacy-first software',
     'anti-censorship',
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Serika, a new home for anime and the open internet',
     description:
-      'Privacy-first, open source ecosystem: SerikaMoe anime streaming, Serika Booru, Serika.chat, Serika Search and more. No AI training on your data.',
+      'Privacy-first, open source ecosystem: SerikaMoe anime streaming, Serika Booru, Serika.chat and Serika Social. No AI training on your data.',
     url: SITE,
     siteName: 'Serika',
     locale: 'en_US',
@@ -74,7 +74,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Serika, a new home for anime and the open internet',
     description:
-      'Privacy-first, open source anime streaming, image board, chat & search.',
+      'Privacy-first, open source anime streaming, image board, chat and social VR.',
     site: '@SerikaDev',
     creator: '@SerikaDev',
   },
@@ -104,7 +104,7 @@ const orgJsonLd = {
   url: SITE,
   logo: `${SITE}/favicon.png`,
   description:
-    'Serika builds open source software for a freer internet: anime streaming, image boards, chat, search and developer tools.',
+    'Serika builds open source software for a freer internet: anime streaming, image boards, chat, social VR and developer tools.',
   sameAs: [
     'https://x.com/SerikaDev',
     'https://x.com/SerikaMoe',
@@ -117,7 +117,7 @@ const orgJsonLd = {
     { '@type': 'Brand', name: 'SerikaMoe' },
     { '@type': 'Brand', name: 'Serika Booru' },
     { '@type': 'Brand', name: 'Serika.chat' },
-    { '@type': 'Brand', name: 'Serika Search' },
+    { '@type': 'Brand', name: 'Serika Social' },
   ],
 };
 

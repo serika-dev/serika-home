@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import { Heart, ArrowUpRight } from 'lucide-react';
 import { Footer } from '../components/Footer';
 import { NewYearCountdown } from '../components/NewYearCountdown';
+import { PageHeader } from '../components/home/PageHeader';
+import { Reveal } from '../components/home/Reveal';
 
 export const metadata: Metadata = {
   title: 'Support Serika, keep open source running',
@@ -56,31 +58,23 @@ const expenseBreakdown = [
 export default function DonatePage() {
   return (
     <>
-      <div className="glow" aria-hidden="true" />
-      <main className="relative z-10 mx-auto max-w-3xl px-6 pt-24 pb-24 sm:pt-32">
-        {/* Hero */}
-        <div className="rise">
-          <p className="mono mb-8 text-xs uppercase tracking-[0.25em] text-[var(--accent)]">
-            Support Serika
-          </p>
-          <h1 className="display text-4xl font-bold leading-[1.05] tracking-[-0.02em] text-[var(--text)] sm:text-6xl">
-            We can&rsquo;t keep doing this alone.
-          </h1>
-          <p className="mt-8 text-xl leading-relaxed text-[var(--muted)]">
-            Four years. Every server, every domain, every bill. Paid out of our
-            own pockets. We built all of this because we care, and we wanted
-            everyone to have access to it for free. But we&rsquo;re tired, and
-            we&rsquo;re running out of reasons to keep paying for it ourselves.
-          </p>
-        </div>
+      <main className="relative z-10">
+        <PageHeader
+          kicker="Support Serika"
+          title="We can’t keep doing"
+          accent="this alone."
+          lead="Four years. Every server, every domain, every bill. Paid out of our own pockets. We built all of this because we care, and we wanted everyone to have access to it for free. But we’re tired, and we’re running out of reasons to keep paying for it ourselves."
+        />
+
+      <div className="mx-auto max-w-3xl px-5 pb-28">
 
         {/* Finances overview */}
-        <section className="mt-16">
+        <Reveal><section className="mt-16">
           <h2 className="mono text-xs uppercase tracking-[0.2em] text-[var(--faint)]">
             This month at a glance
           </h2>
 
-          <div className="mt-6 overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--panel)]">
+          <div className="tile mt-6 overflow-hidden">
             {/* Summary numbers */}
             <div className="grid grid-cols-3 divide-x divide-[var(--border)] border-b border-[var(--border)]">
               <div className="px-5 py-6 sm:px-6">
@@ -204,10 +198,10 @@ export default function DonatePage() {
               </div>
             </div>
           </div>
-        </section>
+        </section></Reveal>
 
         {/* The ask */}
-        <section className="mt-16 space-y-5 text-[17px] leading-[1.75] text-[var(--muted)]">
+        <Reveal><section className="mt-16 space-y-5 text-[17px] leading-[1.75] text-[var(--muted)]">
           <h2 className="mono text-xs uppercase tracking-[0.2em] text-[var(--faint)]">
             Why we need your help
           </h2>
@@ -255,10 +249,10 @@ export default function DonatePage() {
             internet, please consider supporting us. Even a small amount helps.
             It tells us we&rsquo;re not doing this for nothing.
           </p>
-        </section>
+        </section></Reveal>
 
         {/* Donation links */}
-        <section className="mt-12">
+        <Reveal><section className="mt-12">
           <h2 className="mono text-xs uppercase tracking-[0.2em] text-[var(--faint)]">
             Ways to support
           </h2>
@@ -269,7 +263,7 @@ export default function DonatePage() {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex flex-col rounded-xl border border-[var(--border)] bg-[var(--panel)] p-6 transition-colors hover:border-[var(--border-strong)] hover:bg-[var(--panel-hover)]"
+                className="tile group flex flex-col p-6 transition-[border-color] hover:border-[var(--accent-line)]"
               >
                 <div className="flex items-center justify-between">
                   <span className="display text-lg font-bold text-[var(--text)]">
@@ -283,10 +277,10 @@ export default function DonatePage() {
               </a>
             ))}
           </div>
-        </section>
+        </section></Reveal>
 
         {/* New Year's countdown */}
-        <section className="mt-16">
+        <Reveal><section className="mt-16">
           <h2 className="mono text-xs uppercase tracking-[0.2em] text-[var(--faint)]">
             A new year, a new goal
           </h2>
@@ -298,10 +292,10 @@ export default function DonatePage() {
           <div className="mt-6">
             <NewYearCountdown />
           </div>
-        </section>
+        </section></Reveal>
 
         {/* Closing */}
-        <section className="mt-16 rounded-2xl border border-[var(--accent)]/30 bg-[var(--accent-soft)] p-8">
+        <Reveal><section className="mt-16 rounded-2xl border border-[var(--accent)]/30 bg-[var(--accent-soft)] p-8">
           <div className="flex items-start gap-4">
             <Heart className="mt-1 h-6 w-6 shrink-0 text-[var(--accent)]" />
             <div>
@@ -317,7 +311,8 @@ export default function DonatePage() {
               </p>
             </div>
           </div>
-        </section>
+        </section></Reveal>
+      </div>
       </main>
       <Footer />
     </>

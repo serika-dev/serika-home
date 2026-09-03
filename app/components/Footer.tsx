@@ -8,8 +8,8 @@ const columns: { heading: string; links: { label: string; href: string; external
       { label: 'Serika Booru', href: '/products/serika-booru' },
       { label: 'SerikaMoe', href: '/products/serikamoe' },
       { label: 'Serika.chat', href: '/products/serika-chat' },
-      { label: 'Serika Search', href: '/products/serika-search' },
-      { label: 'Serika Games', href: '/products/serika-games' },
+      { label: 'Serika Social', href: '/products/serika-social' },
+      { label: 'SerikaVideo', href: '/products/serika-video' },
     ],
   },
   {

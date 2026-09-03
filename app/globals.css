@@ -13,6 +13,16 @@
   --accent-soft: rgba(139, 92, 246, 0.14);
   --ok: #22c55e;
   --down: #ef4444;
+
+  /* Maximalist extensions. Same purple, more range to work in. */
+  --accent-bright: #a78bfa;
+  --accent-deep: #5b21b6;
+  --accent-line: rgba(139, 92, 246, 0.22);
+  --grid-line: rgba(139, 92, 246, 0.07);
+
+  /* Layered header stack. Nav is 4rem, each collapsed bar 1.5rem, active 2.75rem. */
+  --nav-h: 4rem;
+  --rail-h: 4rem;
 }
 
 @theme inline {
@@ -67,6 +77,146 @@ body {
   font-family: var(--font-jetbrains), ui-monospace, monospace;
 }
 
+/* Giant outline type. Used for the hero backdrop plane only. */
+.stroke {
+  color: transparent;
+  -webkit-text-stroke: 1px var(--accent-line);
+}
+
+/* Hairline technical grid. Masked so it never fights the copy. */
+.hairgrid {
+  background-image:
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: 72px 72px;
+}
+
+/* Widget surface. One shared card treatment across every act. */
+.tile {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  isolation: isolate;
+}
+
+.tile::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  background: radial-gradient(
+    22rem 22rem at var(--mx, 50%) var(--my, 0%),
+    rgba(139, 92, 246, 0.16),
+    transparent 70%
+  );
+}
+
+.tile:hover::before,
+.tile:focus-within::before {
+  opacity: 1;
+}
+
+.tile > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Pointer tilt. Set by useTileMotion; the tile leans toward the cursor.
+   preserve-3d lets marked children sit at their own depth inside the lean. */
+.tilt {
+  transform: perspective(1000px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transform-style: preserve-3d;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.tilt:hover {
+  transition: transform 0.08s linear;
+}
+
+/* Depth layers inside a tilting tile. The further forward, the more the
+   element separates from the card as it leans. */
+.z1 { transform: translateZ(18px); }
+.z2 { transform: translateZ(38px); }
+.z3 { transform: translateZ(62px); }
+
+/* A stage that gives its children real perspective rather than each child
+   carrying its own, so they share one vanishing point. */
+.scene {
+  perspective: 1400px;
+  perspective-origin: 50% 45%;
+}
+
+.scene-deep {
+  perspective: 900px;
+  perspective-origin: 50% 50%;
+}
+
+.preserve-3d { transform-style: preserve-3d; }
+
+/* Magnetic control. The button leans toward the cursor before it is clicked. */
+.magnetic {
+  transform: translate3d(var(--tx, 0px), var(--ty, 0px), 0);
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.magnetic:hover {
+  transition: transform 0.12s linear;
+}
+
+/* Ambient layer. Two slow drifting fields that never resolve to a loop point
+   the eye can lock onto, because their periods do not divide evenly. */
+@keyframes drift-a {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  50%  { transform: translate3d(7%, -5%, 0) scale(1.14); }
+  100% { transform: translate3d(0, 0, 0) scale(1); }
+}
+
+@keyframes drift-b {
+  0%   { transform: translate3d(0, 0, 0) scale(1.08); }
+  50%  { transform: translate3d(-6%, 6%, 0) scale(1); }
+  100% { transform: translate3d(0, 0, 0) scale(1.08); }
+}
+
+.drift-a { animation: drift-a 38s ease-in-out infinite; }
+.drift-b { animation: drift-b 47s ease-in-out infinite; }
+
+/* The grid pans by exactly one cell, so the loop is seamless. */
+@keyframes grid-pan {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-72px, -72px, 0); }
+}
+
+.grid-pan { animation: grid-pan 26s linear infinite; }
+
+/* Live status pulse. Rings expand out of an operational host. */
+@keyframes ping-ring {
+  0%   { transform: scale(1); opacity: 0.55; }
+  70%  { opacity: 0; }
+  100% { transform: scale(3.6); opacity: 0; }
+}
+
+.ping-ring { animation: ping-ring 2.6s cubic-bezier(0, 0, 0.2, 1) infinite; }
+
+/* Sweep bar that crosses the console while it audits hosts. */
+@keyframes sweep {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(400%); }
+}
+
+.sweep { animation: sweep 2.8s ease-in-out infinite; }
+
+/* Scroll-driven horizontal track. */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
 @keyframes rise {
   from { opacity: 0; transform: translateY(12px); }
   to { opacity: 1; transform: translateY(0); }
@@ -77,7 +227,15 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    /* Without this, an infinite loop restarts every 0.001ms and repaints
+       forever instead of stopping. */
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
   html { scroll-behavior: auto; }
 }
 

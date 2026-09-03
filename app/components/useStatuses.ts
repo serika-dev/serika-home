@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import type { Status } from './StatusIndicator';
 import type { Product } from '../data/products';
 
@@ -10,9 +10,26 @@ export type StatusMap = Record<string, Status>;
 export function useStatuses(products: Product[]): StatusMap {
   const [statuses, setStatuses] = useState<StatusMap>({});
 
+  // Key the effect on what actually matters, not on the array's identity.
+  // A caller passing an inline literal would otherwise re-run the fetch on
+  // every render, and each fetch sets state, which renders again forever.
+  const key = products
+    .filter((p) => p.statusCheck && p.url)
+    .map((p) => `${p.slug}:${p.url}`)
+    .join(',');
+
+  const latest = useRef(products);
+  latest.current = products;
+
+  const targetList = useMemo(
+    () => latest.current.filter((p) => p.statusCheck && p.url),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [key],
+  );
+
   useEffect(() => {
     let cancelled = false;
-    const targets = products.filter((p) => p.statusCheck && p.url);
+    const targets = targetList;
 
     setStatuses(
       Object.fromEntries(targets.map((p) => [p.slug, 'checking' as Status])),
@@ -37,7 +54,7 @@ export function useStatuses(products: Product[]): StatusMap {
     return () => {
       cancelled = true;
     };
-  }, [products]);
+  }, [targetList]);
 
   return statuses;
 }
