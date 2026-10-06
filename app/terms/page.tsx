@@ -23,7 +23,7 @@ const clauses: Clause[] = [
     id: 'services',
     heading: 'Our services',
     body: [
-      'Serika designs, builds and operates a range of software products, which may include (without limitation) SerikaMoe, Serika Booru, Serika.chat, Serika Search, Serika Games, and various experimental or early-stage projects. The specific Services available to you may change over time.',
+      'Serika designs, builds and operates a range of software products, which may include (without limitation) SerikaMoe, Serika Booru, Serika.chat, Serika Social, SerikaVideo, and various experimental or early-stage projects. The specific Services available to you may change over time.',
       'Some Services are early-stage, experimental or provided as previews. Such Services may be incomplete, may change or be withdrawn without notice, and may not perform as intended. You use them at your own risk.',
     ],
   },
